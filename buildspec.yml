@@ -6,13 +6,16 @@ phases:
       nodejs: 16
     commands:
       - echo "Install dependencies"
+      - cd frontend
       - npm install
+
   build:
     commands:
-      - echo "Build vue app"
+      - echo "Build project"
+      - cd frontend
       - npm run build
 
 artifacts:
+  base-directory: frontend/dist   # 看老师要求，通常是打包后的目录
   files:
     - '**/*'
-  base-directory: dist
