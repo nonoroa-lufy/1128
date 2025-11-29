@@ -2,16 +2,12 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: disk/shop/
     destination: /var/www/html
-    overwrite: true
+file_exists_behavior: OVERWRITE
 
-hooks:
-  BeforeInstall:
-    - location: scripts/install_httpd.sh
-      timeout: 300
-      runas: root
-  AfterInstall:
-    - location: scripts/restart_httpd.sh
-      timeout: 300
-      runas: root
+#hooks:
+  #BeforeInstall:
+  #AfterInstall:
+    #- location: scripts/restart_httpd.sh
+      #timeout: 300
